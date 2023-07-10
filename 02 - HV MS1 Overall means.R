@@ -6,11 +6,8 @@
 
 
 # 1. Load packages ####
-library(viridis)
-library(patchwork)
-library(ggExtra)
-library(brms)
-library(geonames)
+
+# None needed here that aren't loaded in 01
 
 
 
