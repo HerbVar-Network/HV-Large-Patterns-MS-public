@@ -1,4 +1,4 @@
-# 02 - HV MS1 - Overall means
+# 02 - HV MS1 Overall means
 
 # First run '01 - HV MS1 Load data and build tree.R' to load and prep data
 
