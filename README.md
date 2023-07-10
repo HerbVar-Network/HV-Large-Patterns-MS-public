@@ -1,16 +1,16 @@
 # Plant size, latitude, and phylogeny explain within-population variability in herbivory
 ---
 
-This dataset or analysis was produced by the members of The Herbivory Variability Network. It examines global and phylogenetic patterns of herbivory via 790 suveys of 503 plant species. 
+This dataset and set of scripts was produced by the members of The Herbivory Variability Network. It examines global and phylogenetic patterns of herbivory via 790 suveys of 503 plant species. 
 
 Our website is [herbvar.org](https://herbvar.org). We are funded by the US National Science Foundation Research Coordination Networks program. The Principal Investigators (PIs) of the project are William Wetzel (william.wetzel@montana.edu), Phil Hahn, Brian Inouye, Nora Underwood, and Susan Whitehead. The steering committee is the PIs and Karen Abbott, Emilio Bruna, N. Ivalú Cacho, and Lee Dyer. Our contact information is [here](https://herbvar.org/leadership.html). For the full list of HerbVar members, please see [this webpage](https://herbvar.org/CollaboratorDirectory.html).
 
-This version of the dataset/analysis is associated with our paper "Plant size, latitude, and phylogeny explain within-population variability in herbivory."
+This version of the dataset and analysis is associated with our paper "Plant size, latitude, and phylogeny explain within-population variability in herbivory."
 
 
 ## Description of the data and file structure
 
-There are three csv data files in this dataset. Each represents a different biological scale: plant individuals, plant populations, and plant species.
+The dataset associated with this paper is available at [datadryad.org](datadryad.ord). There are three csv data files in the dataset. Each represents a different biological scale: plant individuals, plant populations, and plant species.
 
 data_plant_level_prep_2023-01-01 10-15-19.csv -- each row is a plant individual
 data_survey_level_prep_2023-01-01 10-15-19.csv -- each row is a plant population
@@ -72,5 +72,13 @@ data_species_level_prep_2023-01-01 10-15-19.csv -- each row is a plant species
 
 ## Code/Software
 
-Our analysis scripts are available at 
-[https://github.com/HerbVar-Network/HV-Large-Patterns-MS-public](https://github.com/HerbVar-Network/HV-Large-Patterns-MS-public)
+Our analysis scripts are also available at our [public GitHub repository for this paper](https://github.com/HerbVar-Network/HV-Large-Patterns-MS-public). It includes six R scripts.
+
+| Script | Purpose |
+| --- | --- |
+| 01 - HV MS1 Load data and build tree.R | Loads the data files, builds the phylogenetic tree, and sets priors for all beta models |
+| 02 - HV MS1 Overall means.R | Calculates model predicted means for mean herbivory and the Gini coefficient of herbivory, plus one more summary statistic |
+| 03 - HV MS1 Geographic analyses.R | Models geographic patterns in herbivory means and the Gini coefficient, including with latitude and biome |
+| 04 - HV MS1 Plant trait analyses.R | Models patterns in herbivory with plant size and plant growth form |
+| 05 - HV MS1 Phylogenetic signal.R | Calculates phylogenetic signal in mean herbivory and the Gini coefficient |
+| 06 - HV MS1 Sensitivity analyses.R | This script examines the sensitivity of our results to within-survey sample size |
