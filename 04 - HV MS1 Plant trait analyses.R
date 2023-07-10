@@ -98,6 +98,7 @@ gm = brm(plantMeanProp ~ growthForm_simp +
   control = list(adapt_delta = 0.99))
 saveRDS(gm, 'gm.rds')
 r2_bayes(gm)
+bayesfactor_parameters(gm, null = 0, direction = "two-sided")
 
 
 
