@@ -28,14 +28,14 @@ averageMean = brm(plantMean ~ 1 + (1|species) + (1|gr(Genus_sp, cov = A)),
 saveRDS(averageMean, 'averageMean.rds')
 
 # Mean Gini
-averageGiniAdjBeta = brm(plantGiniAdj ~ 1 + (1|species) + (1|gr(Genus_sp, cov = A)),
+averageGiniAdj = brm(plantGiniAdj ~ 1 + (1|species) + (1|gr(Genus_sp, cov = A)),
   data=data,
   data2=list(A = A),
   family='beta',
   cores=16, chains=16, iter=1000,
   backend = "cmdstanr",
   control = list(adapt_delta = 0.9))
-saveRDS(averageGiniAdjBeta, 'averageGiniAdjBeta.rds')
+saveRDS(averageGiniAdj, 'averageGiniAdj.rds')
 
 
 
