@@ -7,7 +7,7 @@
 
 # 1. Load packages #############################################################
 
-library(performance)
+# None needed here that aren't loaded in 01
 
 
 
@@ -22,7 +22,7 @@ sg = brm(plantGiniAdj ~
   data2=list(A = A),
   family='beta',
   sample_prior = 'yes',
-  cores=7, chains=7, iter=5750*2,
+  cores=16, chains=16, iter=5000,
   backend = "cmdstanr",
   control = list(adapt_delta = 0.95))
 saveRDS(sg, 'sg.rds')
@@ -39,7 +39,7 @@ sm = brm(plantMeanProp ~
   data2=list(A = A),
   family='beta',
   sample_prior = 'yes',
-  cores=16, chains=16, iter=2500,
+  cores=16, chains=16, iter=5000,
   backend = "cmdstanr",
   control = list(adapt_delta = 0.985))
 saveRDS(sm, 'sm.rds')
@@ -76,7 +76,7 @@ gg = brm(plantGiniAdj ~ growthForm_simp +
   data2=list(A = A),
   family='beta',
   sample_prior = 'yes',
-  cores=16, chains=16, iter=2500,
+  cores=16, chains=16, iter=5000,
   save_pars = save_pars(all = TRUE),
   backend = "cmdstanr",
   control = list(adapt_delta = 0.98))
@@ -92,7 +92,7 @@ gm = brm(plantMeanProp ~ growthForm_simp +
   data2=list(A = A),
   family='beta',
   sample_prior = 'yes',
-  cores=16, chains=16, iter=2500,
+  cores=16, chains=16, iter=5000,
   save_pars = save_pars(all = TRUE),
   backend = "cmdstanr",
   control = list(adapt_delta = 0.99))

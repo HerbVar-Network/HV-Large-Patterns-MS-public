@@ -27,7 +27,7 @@ lg = brm(plantGiniAdj ~
   family='beta',
   sample_prior = 'yes',
   save_pars = save_pars(all = TRUE),
-  cores=7, chains=7, iter=5750*2,
+  cores=16, chains=16, iter=5000,
   backend = "cmdstanr",
   control = list(adapt_delta = 0.9))
 saveRDS(lg, 'lg.rds')
@@ -44,7 +44,7 @@ lgm = brm(plantGiniAdj ~
   data2=list(A = A),
   family='beta',
   sample_prior = 'yes',
-  cores=7, chains=7, iter=ceiling(40000 * 2 / 7),
+  cores=16, chains=16, iter=5000,
   backend = "cmdstanr",
   control = list(adapt_delta = 0.9))
 saveRDS(lgm, 'lgm.rds')
@@ -63,12 +63,12 @@ lm = brm(plantMeanProp ~
   data2=list(A = A),
   family='beta',
   sample_prior = 'yes',
-  cores=7, chains=7, iter=6000,
+  cores=16, chains=16, iter=5000,
   backend = "cmdstanr",
   control = list(adapt_delta = 0.95))
 saveRDS(lm, 'lm.rds')
 r2_bayes(lm)
-bayesfactor_parameters(lb_meantot, null = 0, direction = "<")
+bayesfactor_parameters(lm, null = 0, direction = "<")
 
 
 ## 2.3. Latitude * hemisphere models ####
@@ -82,7 +82,7 @@ lgh = brm(plantGiniAdj ~
   family='beta',
   sample_prior = 'yes',
   save_pars = save_pars(all = TRUE),
-  cores=7, chains=7, iter=5750,
+  cores=16, chains=16, iter=5000,
   backend = "cmdstanr",
   control = list(adapt_delta = 0.9))
 saveRDS(lgh, 'lgh.rds')
@@ -97,7 +97,7 @@ lmh = brm(plantMeanProp ~
   family='beta',
   sample_prior = 'yes',
   save_pars = save_pars(all = TRUE),
-  cores=7, chains=7, iter=5750,
+  cores=16, chains=16, iter=5000,
   backend = "cmdstanr",
   control = list(adapt_delta = 0.9))
 saveRDS(lmh, 'lmh.rds')
@@ -112,7 +112,7 @@ lg_size= brm(plantGiniAdj ~
   data=data,
   data2=list(A = A),
   family='beta',
-  cores=7, chains=7, iter=1000,
+  cores=16, chains=16, iter=5000,
   backend = "cmdstanr",
   control = list(adapt_delta = 0.9))
 saveRDS(lg_size, 'lg_size.rds')
@@ -157,7 +157,7 @@ b = brm(mvbind(plantGiniAdj, plantMeanProp) ~
   backend = "cmdstanr",
   control = list(adapt_delta = 0.9))
 saveRDS(b, 'b.rds')
-r2_bayes(bbre)
+r2_bayes(b)
 
 
 
