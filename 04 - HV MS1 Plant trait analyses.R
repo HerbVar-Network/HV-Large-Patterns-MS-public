@@ -66,7 +66,7 @@ bayesfactor_parameters(sg_density, null = 0, direction = "<")
 
 
 
-# 3. Growth form models ############################################################
+# 3. Growth form models ########################################################
 
 ## 3.1. Gini herbivory ####
 gg = brm(plantGiniAdj ~ growthForm_simp +
