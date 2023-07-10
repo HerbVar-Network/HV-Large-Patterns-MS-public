@@ -27,7 +27,7 @@ sg = brm(plantGiniAdj ~
   control = list(adapt_delta = 0.95))
 saveRDS(sg, 'sg.rds')
 r2_bayes(sg)
-bayesfactor_parameters(sgb, null = 0, direction = "<")
+bayesfactor_parameters(sg, null = 0, direction = "<")
 
 
 ## 2.2. Mean herbivory ####
@@ -61,7 +61,7 @@ sg_density = brm(plantGiniAdj ~
   control = list(adapt_delta = 0.95))
 saveRDS(sg_density, 'sg_density.rds')
 r2_bayes(sg_density)
-bayesfactor_parameters(sgb_density, null = 0, direction = "<")
+bayesfactor_parameters(sg_density, null = 0, direction = "<")
 
 
 
