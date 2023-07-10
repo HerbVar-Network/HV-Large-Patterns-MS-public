@@ -36,6 +36,8 @@ options(mc.cores=parallel::detectCores())
 # 2. Load data ####
 
 data = read.csv('data_survey_level_prep_2023-01-01 10-15-19.csv')
+dsp = read.csv('data_species_level_prep_2023-01-01 10-15-19.csv')
+dp = read.csv('data_plant_level_prep_2023-01-01 10-15-19.csv')
 
 
 
