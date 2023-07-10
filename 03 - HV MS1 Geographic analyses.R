@@ -117,8 +117,13 @@ lg_size= brm(plantGiniAdj ~
   control = list(adapt_delta = 0.9))
 saveRDS(lg_size, 'lg_size.rds')
 r2_bayes(lg_size)
+bayesfactor_parameters(lg_size, null = 0, direction = "<",
+  parameters = 'sizeDiameterMeanLogScale')
+bayesfactor_parameters(lg_size, null = 0, direction = ">",
+  parameters = 'Lat_abs_scale')
 
-### 2.4.2. Latitude-size model ####
+
+### 2.4.2. Latitude-density model ####
 lg_density= brm(plantGiniAdj ~
     Lat_abs_scale + focalPlantCoverMean +
     (1|species) + (1|gr(Genus_sp, cov = A)),
@@ -133,7 +138,8 @@ lg_density= brm(plantGiniAdj ~
   control = list(adapt_delta = 0.85))
 saveRDS(lg_density, 'lg_density.rds')
 r2_bayes(lg_density)
-bayesfactor_parameters(lg_density, null=0, direction = '>')
+bayesfactor_parameters(lg_density, null=0, direction = '>',
+  parameters = 'Lat_abs_scale')
 
 
 
