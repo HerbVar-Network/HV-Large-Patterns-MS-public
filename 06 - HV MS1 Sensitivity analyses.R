@@ -9,7 +9,6 @@
 library(purrr)
 library(broom)
 library(broom.mixed)
-library(lubridate)
 
 
 
@@ -144,7 +143,7 @@ lat30nonsub = brm(plantGiniAdj ~
   data=d30nonsub,
   data2=list(A = A),
   family='beta',
-  cores=12, chains=12, iter=800,
+  cores=16, chains=16, iter=800,
   backend = "cmdstanr",
   control = list(adapt_delta = 0.85))
 r2_bayes(lat30nonsub)
@@ -156,7 +155,7 @@ latd = brm(plantGiniAdj ~
   data=data,
   data2=list(A = A),
   family='beta',
-  cores=12, chains=12, iter=800,
+  cores=16, chains=16, iter=800,
   backend = "cmdstanr",
   control = list(adapt_delta = 0.85))
 r2_bayes(latd)
@@ -170,7 +169,7 @@ for(i in 1:100){
     data=d30l[[i]],
     data2=list(A = A),
     family='beta',
-    cores=12, chains=12, iter=600,
+    cores=16, chains=16, iter=800,
     backend = "cmdstanr",
     control = list(adapt_delta = 0.85))
   print(i)
@@ -213,7 +212,7 @@ for(i in 1:100){
     data=d30l[[i]],
     data2=list(A = A),
     family='beta',
-    cores=12, chains=12, iter=600,
+    cores=16, chains=16, iter=800,
     backend = "cmdstanr",
     control = list(adapt_delta = 0.85))
   print(i)
